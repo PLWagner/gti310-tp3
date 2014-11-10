@@ -2,6 +2,7 @@ package parser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.IOException;
 
 
 public class concreteParser implements Parser {
@@ -9,6 +10,7 @@ public class concreteParser implements Parser {
 
 		@Override
 		public Object parse(String filename) {
+			BufferedReader in = null;
 			try{
 
 			    BufferedReader br = new BufferedReader(new FileReader(filename));
@@ -23,7 +25,12 @@ public class concreteParser implements Parser {
 			    }catch (Exception e){//Catch exception if any
 			      System.err.println("Error: " + e.getMessage());
 			    }finally{
-			     in.close();
+			     try {
+					in.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			    }
 			return null;
 		}
