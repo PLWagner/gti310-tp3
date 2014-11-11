@@ -5,11 +5,11 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class CheminParser implements Parser<Chemin> {
+public class CheminsParser implements Parser<Zone> {
 
 	@SuppressWarnings("null")
 	@Override
-	public Chemin parse(String filename) {
+	public Zone parse(String filename) {
 			
 		BufferedReader in = null;
 		try{
