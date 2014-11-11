@@ -5,8 +5,24 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class CheminParser implements Parser<Chemin> {
+public class ZoneParser implements Parser<Chemin> {
 
+	/*
+	 * CONSTANTES
+	 */
+	public static final int LIGNE_NB_SOMMETS = 1; 
+	public static final int LIGNE_VAL_INFINI = 2;
+	public static final int LIGNE_SOMMET_DEPART = 3;
+	
+	/*
+	 * VARIABLES
+	 */
+	private int ligne = 0;
+	
+	/*
+	 * (non-Javadoc)
+	 * @see parser.Parser#parse(java.lang.String)
+	 */
 	@SuppressWarnings("null")
 	@Override
 	public Chemin parse(String filename) {
@@ -18,6 +34,7 @@ public class CheminParser implements Parser<Chemin> {
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 		    String strLine;
 		    //Read File Line By Line
+		    ligne = 1;
 		    while ((strLine = br.readLine()) != null)   {
 		    	// Print the content on the console
 		    	System.out.println (strLine);
