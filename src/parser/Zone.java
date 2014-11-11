@@ -8,12 +8,12 @@ public class Zone {
 	int sommetDepart;
 	List<Chemin> listeChemins;
 
-
 	
 	/*
 	 * CONSTRUCTEUR
 	 */
 	public Zone(){}
+	
 	
 	/*
 	 * ACCESSEURS
@@ -33,8 +33,6 @@ public class Zone {
 	/*
 	 * MUTATEURS
 	 */
-
-
 	public void setNbSommets(int nbSommets) {
 		this.nbSommets = nbSommets;
 	}
