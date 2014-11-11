@@ -17,7 +17,7 @@ public class ZoneParser implements Parser<Chemin> {
 	/*
 	 * VARIABLES
 	 */
-	private int ligne = 0;
+	private int ligne = 1;
 	
 	/*
 	 * (non-Javadoc)
@@ -26,7 +26,8 @@ public class ZoneParser implements Parser<Chemin> {
 	@SuppressWarnings("null")
 	@Override
 	public Chemin parse(String filename) {
-			
+		
+		Chemin zone = new Chemin();
 		BufferedReader in = null;
 		try{
 
@@ -34,13 +35,27 @@ public class ZoneParser implements Parser<Chemin> {
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 		    String strLine;
 		    //Read File Line By Line
-		    ligne = 1;
 		    while ((strLine = br.readLine()) != null)   {
 		    	// Print the content on the console
-		    	System.out.println (strLine);
+		    	if (ligne == LIGNE_NB_SOMMETS){
+		    		zone.setNbSommets(Integer.parseInt(strLine));
+		    	   	System.out.println (strLine);
+		    	   	ligne++;
+		    	}
+		    	else if (ligne == LIGNE_VAL_INFINI) {
+		    		zone.setValPourInfini(Integer.parseInt(strLine));
+		    	   	System.out.println (strLine);
+		    	   	ligne++;
+				}
+		    	else if (ligne == LIGNE_SOMMET_DEPART) {
+		    		zone.setSommetDepart(Integer.parseInt(strLine));
+		    	   	System.out.println (strLine);
+		    	   	ligne++;
+				}	
+		    		
 		    }
 			//Close the input stream
-			in.close();
+			br.close();
 		}catch (Exception e){//Catch exception if any
 			System.err.println("Error: " + e.getMessage());
 		}finally{
