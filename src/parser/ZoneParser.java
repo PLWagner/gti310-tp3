@@ -5,7 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class ZoneParser implements Parser<Chemin> {
+public class ZoneParser implements Parser<Zone> {
 
 	/*
 	 * CONSTANTES
@@ -25,9 +25,9 @@ public class ZoneParser implements Parser<Chemin> {
 	 */
 	@SuppressWarnings("null")
 	@Override
-	public Chemin parse(String filename) {
+	public Zone parse(String filename) {
 		
-		Chemin zone = new Chemin();
+		Zone zone = new Zone();
 		BufferedReader in = null;
 		try{
 
@@ -35,24 +35,26 @@ public class ZoneParser implements Parser<Chemin> {
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 		    String strLine;
 		    //Read File Line By Line
-		    while ((strLine = br.readLine()) != null)   {
+		    while (!(strLine = br.readLine()).equalsIgnoreCase("$") || (strLine = br.readLine()) != null)   {
 		    	// Print the content on the console
 		    	if (ligne == LIGNE_NB_SOMMETS){
 		    		zone.setNbSommets(Integer.parseInt(strLine));
-		    	   	System.out.println (strLine);
+		    	   	System.out.println (zone.getNbSommets());
 		    	   	ligne++;
 		    	}
 		    	else if (ligne == LIGNE_VAL_INFINI) {
 		    		zone.setValPourInfini(Integer.parseInt(strLine));
-		    	   	System.out.println (strLine);
+		    	   	System.out.println (zone.getValPourInfini());
 		    	   	ligne++;
 				}
 		    	else if (ligne == LIGNE_SOMMET_DEPART) {
 		    		zone.setSommetDepart(Integer.parseInt(strLine));
-		    	   	System.out.println (strLine);
+		    	   	System.out.println (zone.getSommetDepart());
 		    	   	ligne++;
 				}	
-		    		
+		    	else{
+		    		System.out.println (strLine);
+		    	}
 		    }
 			//Close the input stream
 			br.close();

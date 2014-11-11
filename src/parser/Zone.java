@@ -6,7 +6,7 @@ public class Zone {
 	int nbSommets;
 	int valPourInfini;
 	int sommetDepart;
-	List<Chemin> listeCHemins;
+	List<Chemin> listeChemins;
 
 
 	
@@ -27,7 +27,7 @@ public class Zone {
 	public int getSommetDepart() {
 		return sommetDepart;
 	}
-	public List<Chemin> getListeChemins(){return listeCHemins;}
+	public List<Chemin> getListeChemins(){return listeChemins;}
 
 	
 	/*
@@ -47,7 +47,7 @@ public class Zone {
 		this.sommetDepart = sommetDepart;
 	}
 
-	public void setListeCHemins(List<Chemin> listeCHemins) {
-		this.listeCHemins = listeCHemins;
+	public void setListeChemins(List<Chemin> listeChemins) {
+		this.listeChemins = listeChemins;
 	}
 }
