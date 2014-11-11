@@ -1,6 +1,6 @@
 package parser;
 
-public class E {
+public class Chemin {
 	int nbSommets;
 	int valPourInfini;
 	int sommetDepart;
@@ -11,7 +11,7 @@ public class E {
 	/*
 	 * CONSTRUCTEUR
 	 */
-	public E(){}
+	public Chemin(){}
 	
 	/*
 	 * ACCESSEURS

@@ -1,4 +1,4 @@
-import parser.ConcreteParser;
+import parser.CheminParser;
 
 /**
  * The Application class defines a template method to call the elements to
@@ -17,9 +17,10 @@ public class Application {
 	 * 
 	 * @param args The array containing the arguments to the files.
 	 */
-	public static void main(String args[]) {
+	public static void main(String[] args) {
 		System.out.println("Unreal Networks Solver !");
-		ConcreteParser parser = new ConcreteParser();
+		CheminParser parser = new CheminParser();
+		parser.parse(args[0]);
 		
 	}
 }
