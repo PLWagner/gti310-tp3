@@ -1,62 +1,31 @@
 package parser;
 
+/**
+ * Created by michael on 14-11-11.
+ */
 public class Chemin {
-	int nbSommets;
-	int valPourInfini;
-	int sommetDepart;
-	int[] sourceList = new int[]{};
-	int[] destinationList = new int[]{};
-	int[] poidsList = new int[]{};
-	
-	/*
-	 * CONSTRUCTEUR
-	 */
-	public Chemin(){}
-	
-	/*
-	 * ACCESSEURS
-	 */
-	public int getNbSommets() {
-		return nbSommets;
-	}
-	public int getValPourInfini() {
-		return valPourInfini;
-	}
-	public int getSommetDepart() {
-		return sommetDepart;
-	}
-	public int[] getSourceList() {
-		return sourceList;
-	}
-	public int[] getDestinationList() {
-		return destinationList;
-	}
-	public int[] getPoidsList() {
-		return poidsList;
-	}
-	
-	/*
-	 * MUTATEURS
-	 */
-	public void setNbSommets(int nbSommets) {
-		this.nbSommets = nbSommets;
-	}
-	public void setValPourInfini(int valPourInfini) {
-		this.valPourInfini = valPourInfini;
-	}
-	public void setSommetDepart(int sommetDepart) {
-		this.sommetDepart = sommetDepart;
-	}
-	public void setSourceList(int[] sourceList) {
-		this.sourceList = sourceList;
-	}
-	public void setDestinationList(int[] destinationList) {
-		this.destinationList = destinationList;
-	}
-	public void setPoidsList(int[] poidsList) {
-		this.poidsList = poidsList;
-	}
-	
-	
-	
+
+
+    int pointSource;
+
+    int pointArrivee;
+    int poids;
+
+    public Chemin(int _pointSource, int _pointArrivee, int poids) {
+        this.pointSource = pointSource;
+        this.pointArrivee = pointArrivee;
+    }
+
+
+    public int getPointSource() {
+        return pointSource;
+    }
+
+    public int getPointArrivee() {
+        return pointArrivee;
+    }
+
+    public int getPoids() {
+        return poids;
+    }
 }
