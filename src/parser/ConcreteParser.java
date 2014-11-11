@@ -5,11 +5,13 @@ import java.io.FileReader;
 import java.io.IOException;
 
 
-public class concreteParser implements Parser {
+public class ConcreteParser implements Parser<E> {
 
 
+		@SuppressWarnings("null")
 		@Override
-		public Object parse(String filename) {
+		public E parse(String filename) {
+			
 			BufferedReader in = null;
 			try{
 

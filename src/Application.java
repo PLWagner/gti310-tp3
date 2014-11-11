@@ -1,8 +1,10 @@
+import parser.ConcreteParser;
+
 /**
  * The Application class defines a template method to call the elements to
- * solve the problem Unreal-Networks is fa�ing.
+ * solve the problem Unreal-Networks is facing.
  * 
- * @author Fran�ois Caron <francois.caron.7@ens.etsmtl.ca>
+ * @author François Caron <francois.caron.7@ens.etsmtl.ca>
  */
 public class Application {
 
@@ -17,5 +19,7 @@ public class Application {
 	 */
 	public static void main(String args[]) {
 		System.out.println("Unreal Networks Solver !");
+		ConcreteParser parser = new ConcreteParser();
+		
 	}
 }
