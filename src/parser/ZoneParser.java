@@ -3,6 +3,8 @@ package parser;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
 
 
 public class ZoneParser implements Parser<Zone> {
@@ -18,6 +20,12 @@ public class ZoneParser implements Parser<Zone> {
 	 * VARIABLES
 	 */
 	private int ligne = 1;
+	private Pattern monPatObj;
+	private Matcher monMatch;
+	private String pattern,sType;
+	private String[] chaineFinal;
+	private int numSeq;
+	private boolean valide;
 	
 	/*
 	 * (non-Javadoc)
@@ -29,6 +37,8 @@ public class ZoneParser implements Parser<Zone> {
 		
 		Zone zone = new Zone();
 		BufferedReader in = null;
+
+		
 		try{
 
 		    @SuppressWarnings("resource")
@@ -53,7 +63,24 @@ public class ZoneParser implements Parser<Zone> {
 		    	   	ligne++;
 				}	
 		    	else{
-		    		System.out.println (strLine);
+		    		
+		    		/**
+		    		 * Each () = one pattern
+		    		 * + = multiple , \\W = non word character , \\w = word character , \\s = white space , \\d = digit  */
+		    		this.pattern = "(\\d+\\s+)<(.*)>(\\s+\\d+)(\\s+\\d+)(\\s+\\d+)((\\s+\\d+)|(\\s+))";
+		    		this.monPatObj = Pattern.compile(pattern);
+		    		
+		    		monMatch = this.monPatObj.matcher(strLine);
+
+		    		if (monMatch.find( )) {
+		    			for(int i =1; i<monMatch.group().trim().split(" ").length-1; i++){
+		    				chaineFinal[i] = monMatch.group(i+2).trim();
+		    			}
+		    			numSeq=Integer.parseInt(monMatch.group(1).trim());
+
+		    		}else
+		    			valide = false;
+		    		
 		    	}
 		    }
 			//Close the input stream
