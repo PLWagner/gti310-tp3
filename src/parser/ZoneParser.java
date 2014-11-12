@@ -47,12 +47,32 @@ public class ZoneParser implements Parser<Zone> {
 					System.out.println(zone.getValPourInfini());
 					ligne++;
 				} else if (ligne == LIGNE_SOMMET_DEPART) {
-					this.pattern = Pattern.compile("(.*)\\t(.*)\\t(.*)");
+
 					if (strLine.matches("(.*)\\t(.*)\\t(.*)") == true) {
+						zone.setSommetDepart(1);
+						System.out.println(zone.getSommetDepart());
+						this.pattern = Pattern.compile("(.*)\\t(.*)\\t(.*)");
+						matcher = pattern.matcher(strLine);
+						matcher.find();
+						Chemin chemin = new Chemin(
+								Integer.valueOf(matcher.group(1)),
+								Integer.valueOf(matcher.group(2)),
+								Integer.valueOf(matcher.group(3)));
+						zone.setChemins(chemin);
+						System.out.println(zone.getListeChemins().get(rues).pointSource
+								+ "\t"
+								+ zone.getListeChemins().get(rues).pointArrivee
+								+ "\t"
+								+ zone.getListeChemins().get(rues).poids);
+						rues++;
 						
+//					} else if(!strLine.equalsIgnoreCase()){
+//						zone.setSommetDepart(1);
+//						System.out.println(zone.getSommetDepart());
+					} else {
+						zone.setSommetDepart(Integer.parseInt(strLine));
+						System.out.println(zone.getSommetDepart());
 					}
-					zone.setSommetDepart(Integer.parseInt(strLine));
-					System.out.println(zone.getSommetDepart());
 					ligne++;
 				} else {
 
