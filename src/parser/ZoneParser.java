@@ -47,6 +47,10 @@ public class ZoneParser implements Parser<Zone> {
 					System.out.println(zone.getValPourInfini());
 					ligne++;
 				} else if (ligne == LIGNE_SOMMET_DEPART) {
+					this.pattern = Pattern.compile("(.*)\\t(.*)\\t(.*)");
+					if (strLine.matches("(.*)\\t(.*)\\t(.*)") == true) {
+						
+					}
 					zone.setSommetDepart(Integer.parseInt(strLine));
 					System.out.println(zone.getSommetDepart());
 					ligne++;
