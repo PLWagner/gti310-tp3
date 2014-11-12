@@ -1,12 +1,13 @@
 package parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Zone {
 	int nbSommets;
 	int valPourInfini;
 	int sommetDepart;
-	List<Chemin> listeChemins;
+	ArrayList<Chemin> listeChemins = new ArrayList<Chemin>();
 
 	
 	/*
@@ -45,7 +46,7 @@ public class Zone {
 		this.sommetDepart = sommetDepart;
 	}
 
-	public void setListeChemins(List<Chemin> listeChemins) {
-		this.listeChemins = listeChemins;
+	public void setChemins(Chemin chemin) {
+		this.listeChemins.add(chemin);
 	}
 }
