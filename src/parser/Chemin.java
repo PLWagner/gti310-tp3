@@ -11,9 +11,10 @@ public class Chemin {
     int pointArrivee;
     int poids;
 
-    public Chemin(int _pointSource, int _pointArrivee, int poids) {
-        this.pointSource = pointSource;
-        this.pointArrivee = pointArrivee;
+    public Chemin(int _pointSource, int _pointArrivee, int _poids) {
+        this.pointSource = _pointSource;
+        this.pointArrivee = _pointArrivee;
+        this.poids = _poids;
     }
 
 

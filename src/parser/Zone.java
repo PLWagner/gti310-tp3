@@ -1,19 +1,20 @@
 package parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Zone {
 	int nbSommets;
 	int valPourInfini;
 	int sommetDepart;
-	List<Chemin> listeCHemins;
-
+	ArrayList<Chemin> listeChemins = new ArrayList<Chemin>();
 
 	
 	/*
 	 * CONSTRUCTEUR
 	 */
 	public Zone(){}
+	
 	
 	/*
 	 * ACCESSEURS
@@ -27,14 +28,12 @@ public class Zone {
 	public int getSommetDepart() {
 		return sommetDepart;
 	}
-	public List<Chemin> getListeChemins(){return listeCHemins;}
+	public List<Chemin> getListeChemins(){return listeChemins;}
 
 	
 	/*
 	 * MUTATEURS
 	 */
-
-
 	public void setNbSommets(int nbSommets) {
 		this.nbSommets = nbSommets;
 	}
@@ -47,7 +46,7 @@ public class Zone {
 		this.sommetDepart = sommetDepart;
 	}
 
-	public void setListeCHemins(List<Chemin> listeCHemins) {
-		this.listeCHemins = listeCHemins;
+	public void setChemins(Chemin chemin) {
+		this.listeChemins.add(chemin);
 	}
 }

@@ -1,4 +1,4 @@
-import parser.CheminsParser;
+import parser.ZoneParser;
 
 /**
  * The Application class defines a template method to call the elements to
@@ -19,7 +19,7 @@ public class Application {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Unreal Networks Solver !");
-		CheminsParser parser = new CheminsParser();
+		ZoneParser parser = new ZoneParser();
 		parser.parse(args[0]);
 		
 	}
