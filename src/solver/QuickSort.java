@@ -82,7 +82,7 @@ public class QuickSort<T> {
         List<Chemin> test = MyZone.getListeChemins();
 
         for (Chemin aTest : test) {
-            System.out.printf("%d ", aTest.getPoids());
+            System.out.printf("%d ", aTest.getPointSource());
 
         }
 
@@ -96,7 +96,7 @@ public class QuickSort<T> {
         if (myMap.containsKey(Integer.valueOf(1))) {
             List<Chemin> tempList = myMap.get(Integer.valueOf(2));
             for (int j = 0; j < tempList.size(); j++) {
-                System.out.printf("%d ", tempList.get(j).getPoids());
+                System.out.printf("%d ", tempList.get(j).getPointSource());
             }
             //  System.out.printf("%d ", myMap.get(i).getPoids());
 

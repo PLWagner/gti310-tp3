@@ -13,6 +13,8 @@ public class Chemin implements Comparable<Chemin> {
 
     @SuppressWarnings("CanBeFinal")
     final int pointArrivee;
+    
+    final boolean utilise = false;
     @SuppressWarnings("CanBeFinal")
     final int poids;
 
