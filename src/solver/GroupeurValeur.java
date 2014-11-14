@@ -2,9 +2,7 @@ package solver;
 
 import parser.Chemin;
 
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 
 public class GroupeurValeur {
@@ -18,7 +16,7 @@ public class GroupeurValeur {
      *
      * @param liste
      */
-    public LinkedHashMap deListeAMap(List<Chemin> liste) {
+    public Map<Integer, List<Chemin>> deListeAMap(List<Chemin> liste) {
 
         QuickSort<Chemin> quickSort = new QuickSort<>(liste, 0, liste.size() - 1);
         for (Chemin aListe : liste) {
@@ -43,7 +41,7 @@ public class GroupeurValeur {
 
 
         }
-        return myMap;
+        return Collections.synchronizedMap(myMap);
     }
 
 

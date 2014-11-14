@@ -6,6 +6,7 @@ import parser.ZoneParser;
 
 import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -82,14 +83,14 @@ public class QuickSort<T> {
         List<Chemin> test = MyZone.getListeChemins();
 
         for (Chemin aTest : test) {
-            System.out.printf("%d ", aTest.getPointSource());
+            System.out.printf("%d ", aTest.getPoids());
 
         }
 
 
         System.out.println();
         GroupeurValeur grpVal = new GroupeurValeur();
-        LinkedHashMap<Integer, List> myMap = grpVal.deListeAMap(test);
+        Map<Integer, List<Chemin>> myMap = grpVal.deListeAMap(test);
         // QuickSort quick = new QuickSort(test, 0, test.size()-1);
 
        // for (int i = 0; i < myMap.size(); i++) {

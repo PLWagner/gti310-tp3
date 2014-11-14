@@ -1,3 +1,4 @@
+/*
 package writer;
 import java.io.*;
 
@@ -21,3 +22,4 @@ public class ConcreteWriter implements Writer {
 	}
 
 }
+*/
