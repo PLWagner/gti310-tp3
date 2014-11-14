@@ -8,10 +8,11 @@ import java.util.List;
 /**
  * Created by michael on 14-11-11.
  */
-public class ZoneSolver implements Solver<Zone, List<List<Chemin> > > {
+public class ZoneSolver implements Solver<Zone, List<List<Chemin>>> {
 
-    Zone zone;
-    List<Chemin> listeChemins;
+    @SuppressWarnings("WeakerAccess")
+    private Zone zone;
+    private List<Chemin> listeChemins;
 
     @Override
     public List<List<Chemin> > solve(Zone _zone) {

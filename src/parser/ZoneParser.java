@@ -2,17 +2,17 @@ package parser;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ZoneParser implements Parser<Zone> {
 
-	/*
-	 * CONSTANTES
-	 */
-	public static final int LIGNE_NB_SOMMETS = 1;
-	public static final int LIGNE_VAL_INFINI = 2;
-	public static final int LIGNE_SOMMET_DEPART = 3;
+    /*
+     * CONSTANTES
+     */
+    private static final int LIGNE_NB_SOMMETS = 1;
+    private static final int LIGNE_VAL_INFINI = 2;
+    private static final int LIGNE_SOMMET_DEPART = 3;
 
 	/*
 	 * VARIABLES
@@ -22,15 +22,15 @@ public class ZoneParser implements Parser<Zone> {
 	private Pattern pattern;
 	private Matcher matcher;
 
-	/*
-	 * (non-Javadoc)
-	 * @see parser.Parser#parse(java.lang.String)
-	 */
-	@Override
-	public Zone parse(String filename) {
+    /*
+     * (non-Javadoc)
+     * @see parser.Parser#parse(java.lang.String)
+     */
+    @Override
+    public Zone parse(String filename) {
 
-		Zone zone = new Zone();
-		try {
+        Zone zone = new Zone();
+        try {
 
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			String strLine;
@@ -75,6 +75,6 @@ public class ZoneParser implements Parser<Zone> {
 			System.err.println("Error: " + e.getMessage());
 		} 
 
-		return zone;
-	}
+        return zone;
+    }
 }

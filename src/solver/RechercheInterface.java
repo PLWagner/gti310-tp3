@@ -8,6 +8,6 @@ import java.util.List;
 public interface RechercheInterface<K, V> {
 
 
-   public List<K> rechercher(List<K> liste, V valeur, int debut, int fin);
+    public List<K> rechercher(List<K> liste, V valeur, int debut, int fin);
 
 }
