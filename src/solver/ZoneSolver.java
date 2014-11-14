@@ -15,15 +15,10 @@ public class ZoneSolver implements Solver<Zone, List<List<Chemin> > > {
 
     @Override
     public List<List<Chemin> > solve(Zone _zone) {
-
-
-
+    	
         zone = _zone;
 
         listeChemins = zone.getListeChemins();
-
-
-
 
        // listeChemins.get();
 
