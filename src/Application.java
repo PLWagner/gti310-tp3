@@ -1,6 +1,6 @@
 import parser.ZoneParser;
 import solver.ZoneSolver;
-import writer.ConcreteWriter;
+
 
 /**
  * The Application class defines a template method to call the elements to
@@ -27,7 +27,7 @@ public class Application {
 		System.out.println("Unreal Networks Solver !");
 		ZoneParser parser = new ZoneParser();
 		ZoneSolver solver = new ZoneSolver();
-		ConcreteWriter writer = new ConcreteWriter();
+		//ConcreteWriter writer = new ConcreteWriter();
 		solver.solve(parser.parse(args[0]));
 		//writer.write(args[1], );
 		
