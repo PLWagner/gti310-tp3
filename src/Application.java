@@ -1,5 +1,6 @@
 import parser.ZoneParser;
 import solver.ZoneSolver;
+import writer.ConcreteWriter;
 
 
 /**
@@ -27,9 +28,8 @@ public class Application {
 		System.out.println("Unreal Networks Solver !");
 		ZoneParser parser = new ZoneParser();
 		ZoneSolver solver = new ZoneSolver();
-		//ConcreteWriter writer = new ConcreteWriter();
-		solver.solve(parser.parse(args[0]));
-		//writer.write(args[1], );
+		ConcreteWriter writer = new ConcreteWriter();
+		writer.write(args[1], solver.solve(parser.parse(args[0])));
 		
 	}
 }

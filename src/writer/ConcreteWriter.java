@@ -12,14 +12,15 @@ public class ConcreteWriter implements Writer<List<List<Chemin>>> {
 		
         try {
         BufferedWriter out = new BufferedWriter(new FileWriter(filename));
-		//BufferedReader br = new BufferedReader(new FileReader((String) output)); //TODO
 
-		
+        String newStr = null;
+		System.out.println("output.size() = " + output.size());
 		for (int i = 0; i < output.size(); i++) {
-			for (int j = 0; j < output.size(); j++) {
-				out.write(output.get(i).get(j) + " "); //TODO output.getQqch()
+			for (int j = 0; j < output.get(i).size(); j++) {
+				newStr += output.get(i).get(j) + " ";
+
 			}
-			System.out.println("\n");
+			out.write( newStr +"\n");
 
 		}
 		out.close();

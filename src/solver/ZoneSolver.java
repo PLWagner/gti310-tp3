@@ -43,15 +43,15 @@ public class ZoneSolver implements Solver<Zone, List<List<Chemin>>> {
         
    
 
-        return null;
+        return listDeListDeChemin;
 
     }
     
-    public void parcourirArbre(List<Chemin> listeChemins, Map<Integer, List<Chemin>> mapChemins, List<Chemin> cheminsUtilises, int profondeur, boolean isDeepest, int valDepart, List<List<Chemin>> listDeListDeChemin){
+    public void parcourirArbre(List<Chemin> listeChemins, Map<Integer, List<Chemin>> mapChemins, List<Chemin> cheminsUtilises, int profondeur, boolean isDeepest, int valDepart, List<List<Chemin>> tempCheminUtilises){
     	//print("Entrer dans parcourir arbre : ", isDeepest);
     	List tempCheminUtilises = cheminsUtilises;
 		if (listeChemins == null){
-			return;
+			return tempCheminUtilises;
 		}
     	for (int i = 0; i < listeChemins.size(); i++) {
     		if (listeChemins.get(i).getPointArrivee() == valDepart){
