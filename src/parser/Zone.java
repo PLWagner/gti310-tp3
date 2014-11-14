@@ -7,7 +7,7 @@ public class Zone {
 	int nbSommets;
 	int valPourInfini;
 	int sommetDepart;
-	ArrayList<Chemin> listeChemins = new ArrayList<Chemin>();
+	ArrayList<Chemin> listeChemins = new ArrayList<>();
 
 	
 	/*

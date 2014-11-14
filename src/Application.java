@@ -18,9 +18,15 @@ public class Application {
 	 * @param args The array containing the arguments to the files.
 	 */
 	public static void main(String[] args) {
+		//Integer myInt = 8;
+
+		//System.out.println(Integer.valueOf(myInt.toString()));
+
 		System.out.println("Unreal Networks Solver !");
 		ZoneParser parser = new ZoneParser();
 		parser.parse(args[0]);
+
+
 		
 	}
 }

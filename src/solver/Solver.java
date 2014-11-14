@@ -31,4 +31,6 @@ public interface Solver<E,T> {
 	 * @return A user defined object, or null if something went wrong.
 	 */
 	T solve(E input);
+
+
 }
