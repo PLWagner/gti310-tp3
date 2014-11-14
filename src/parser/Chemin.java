@@ -35,7 +35,7 @@ public class Chemin implements Comparable<Chemin>{
         final int SMALLER = -1;
         final int EQUAL = 0;
         final int BIGGER = 1;
-        if (this.getPoids() < chemin.getPointSource()){
+        if (this.getPoids() < chemin.getPoids() ){
 
             return SMALLER;
         } else if(this.getPoids() > chemin.getPoids() ){
