@@ -49,7 +49,7 @@ public class ZoneSolver implements Solver<Zone, List<List<Chemin>>> {
 		//print("Entrer dans parcourir arbre : ", isDeepest);
 		List tempCheminUtilises = cheminsUtilises;
 		if (listeChemins == null) {
-			return null;
+			return listDeListDeChemin;
 		}
 		for (int i = 0; i < listeChemins.size(); i++) {
 			if (listeChemins.get(i).getPointArrivee() == valDepart) {
@@ -65,7 +65,7 @@ public class ZoneSolver implements Solver<Zone, List<List<Chemin>>> {
 					System.err.print(" " + "Source: " + chemin.getPointSource() + "  Dest : " + chemin.getPointArrivee());
 				}
 				System.err.println();
-				//	}
+
 
 				if (cheminsUtilises.size() > 0) {
 					cheminsUtilises.remove(cheminsUtilises.size() - 1);
@@ -133,15 +133,16 @@ public class ZoneSolver implements Solver<Zone, List<List<Chemin>>> {
 			}
 			if (!tmpBool){
 				for (Chemin chemin : tmpListe)
-					System.out.print(" " + chemin.getPointArrivee()+ " ");
-				System.out.println("Arrivé");
+			/*		System.out.print(" " + chemin.getPointArrivee()+ " ");
+				System.out.println("Arrivé");*/
 				return false;
 
 			}
 		}
 	//	System.out.println();
-
-		return true;
+		//System.out.print(" " + chemin.getPointArrivee()+ " ");
+				System.out.println("Arrivé");
+		return tmpBool;
 	}
 	class CheminComparator implements Comparator<Chemin> {
 		@Override
