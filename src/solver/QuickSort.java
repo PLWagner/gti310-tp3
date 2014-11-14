@@ -17,9 +17,10 @@ public class QuickSort<T> {
     final int SMALLER = -1;
     final int EQUAL = 0;
     final int BIGGER = 1;
-    int profondeur = 1;
-    List<Comparable<T>> listeComparable;
 
+    List<Chemin> listToTest;
+    List<Comparable<T>> listeComparable;
+    Comparable pivot;
 
     public static void main(String[] args) {
         System.out.println("Unreal Networks Solver !");
@@ -42,16 +43,16 @@ public class QuickSort<T> {
         System.out.println();
         GroupeurValeur grpVal = new GroupeurValeur();
         LinkedHashMap<Integer, List> myMap = grpVal.deListeAMap(test);
-       // QuickSort quick = new QuickSort(test, 0, test.size()-1);
+        // QuickSort quick = new QuickSort(test, 0, test.size()-1);
 
         for(int i = 0; i < myMap.size(); i++)
         {
 
             List<Chemin> tempList = myMap.get(i);
             for (int j = 0; j < tempList.size(); j++) {
-                System.out.printf("%d ", tempList.get(i).getPointSource());
+                System.out.printf("%d ", tempList.get(i).getPoids());
             }
-          //  System.out.printf("%d ", myMap.get(i).getPoids());
+            //  System.out.printf("%d ", myMap.get(i).getPoids());
 
         }
 
@@ -60,18 +61,22 @@ public class QuickSort<T> {
 
     void echanger(List<Comparable<T>> liste, int a, int b)
     {
-        Comparable temp = liste.get(a);
+        Comparable<T> temp = liste.get(a);
         liste.set(a, liste.get(b));
         liste.set(b,temp);
     }
 
     public QuickSort(List liste, int debut, int fin)
     {
+        listToTest  = liste;
 
         listeComparable = liste;
         int gauche = debut-1;
         int droite = fin+1;
-        T pivot = (T)listeComparable.get(debut);
+
+        // reset Pivot
+        pivot = null;
+        pivot = listeComparable.get(debut);
 
 	    /* Si le tableau est de longueur nulle, il n'y a rien à faire. */
         if(debut >= fin)
@@ -79,21 +84,23 @@ public class QuickSort<T> {
 
         while(true)
         {
-            do droite--; while(listeComparable.get(droite).compareTo((T) pivot) == BIGGER );
+            do droite--; while(listeComparable.get(droite).compareTo((T) pivot) == BIGGER);
 
-            do gauche++; while(listeComparable.get(gauche).compareTo((T) pivot) == SMALLER );
+            do gauche++; while(listeComparable.get(gauche).compareTo((T) pivot) == SMALLER);
 
             if(gauche < droite)
                 echanger(listeComparable, gauche, droite);
             else break;
         }
 
-/*        for(int i = 0; i < liste.size(); i++)
+/*       for(int i = 0; i < liste.size(); i++)
         {
-            System.out.printf("%d ", liste.get(i).;
+            listeComparable = liste;
+            System.out.printf("%d ", listToTest.get(i).getPointSource());
 
-        }*/
-       // System.out.println();
+
+        }
+        System.out.println();*/
 	    /*
 		 * Maintenant, tous les éléments inférieurs au pivot sont avant ceux
 		 * supérieurs au pivot. On a donc deux groupes de cases à trier. On
@@ -101,6 +108,11 @@ public class QuickSort<T> {
 		 */
         new QuickSort(listeComparable, debut, droite);
         new QuickSort(listeComparable, droite+1, fin);
+/*        profondeur = profondeur- 1;
+        if (profondeur == 0){
+            System.out.println("Profondeur = 0!");
+             liste = listeComparable;
+        }*/
 
     }
 
