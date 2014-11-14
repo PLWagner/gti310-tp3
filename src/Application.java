@@ -28,8 +28,8 @@ public class Application {
 		ZoneParser parser = new ZoneParser();
 		ZoneSolver solver = new ZoneSolver();
 		ConcreteWriter writer = new ConcreteWriter();
-		
-		writer.write(args[1], solver.solve(parser.parse(args[0])));
+		solver.solve(parser.parse(args[0]));
+		//writer.write(args[1], );
 		
 	}
 }
