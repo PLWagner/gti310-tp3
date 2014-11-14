@@ -18,6 +18,7 @@ public class ZoneParser implements Parser<Zone> {
 	 * VARIABLES
 	 */
 	private int ligne = 1;
+	private int rues = 0; // Compteur
 	private Pattern pattern;
 	private Matcher matcher;
 
@@ -33,7 +34,6 @@ public class ZoneParser implements Parser<Zone> {
 
 			BufferedReader br = new BufferedReader(new FileReader(filename));
 			String strLine;
-			int rues = 0; // Compteur
 			// Read File Line By Line
 			while (!(strLine = br.readLine()).equalsIgnoreCase("$")
 					|| (strLine = br.readLine()) != null) {
@@ -60,8 +60,7 @@ public class ZoneParser implements Parser<Zone> {
 							Integer.valueOf(matcher.group(2)),
 							Integer.valueOf(matcher.group(3)));
 					zone.setChemins(chemin);
-					System.out
-							.println(zone.getListeChemins().get(rues).pointSource
+					System.out.println(zone.getListeChemins().get(rues).pointSource
 									+ "\t"
 									+ zone.getListeChemins().get(rues).pointArrivee
 									+ "\t"
