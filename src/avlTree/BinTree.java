@@ -123,5 +123,5 @@ abstract class BinTree<T> {
     { return compter_feuilles_arbre(racine);}
     inline int depth() const                        // Profondeur de l'arbre.
     { return profondeur_arbre(racine);}*/
-};
+}
 

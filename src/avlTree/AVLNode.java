@@ -9,39 +9,32 @@ package avlTree;
 // ATTENTION : Il ne faut pas mettre de destructeur dans le noeud. La
 // destruction des sous-arbres sera geree par l'arbre, pas le noeud!
 //-----------------------------------------------------------------------
-class AVLNode<T>
-{
+class AVLNode<T> {
+    @SuppressWarnings("CanBeFinal")
     T data;
     private AVLNode pere;
 
 
+    private AVLNode filsG;
+    private AVLNode filsD;
 
-    private AVLNode  filsG;
-    private  AVLNode filsD;
 
-
-    public AVLNode(T element, AVLNode<T> _pere){
+    public AVLNode(T element, AVLNode<T> _pere) {
         data = element;
         pere = _pere;
     }
-
-
-
-
-
-
 
 
     public AVLNode getFilsG() {
         return filsG;
     }
 
-    public AVLNode getFilsD() {
-        return filsD;
-    }
-
     public void setFilsG(AVLNode filsG) {
         this.filsG = filsG;
+    }
+
+    public AVLNode getFilsD() {
+        return filsD;
     }
 
     public void setFilsD(AVLNode filsD) {
@@ -56,7 +49,7 @@ class AVLNode<T>
         this.pere = pere;
     }
 
-    public T getData(){
+    public T getData() {
         return data;
     }
 

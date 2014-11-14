@@ -6,28 +6,27 @@ package parser;
  * the output object produced from the method is not defined. The inconvenience
  * is that two specialized classes can produce different outputs. The owner
  * will have to know in advance what type of object will be produced by the
- * method when declaring the object : 
- * 
- *      public class ConcreteParser implements Parser<MyObject> { ... }
- *      
- * 		Parser<MyObject> parser = new ConcreteParse();
- * 
- * @author Fran�ois Caron <francois.caron.7@ens.etsmtl.ca>
+ * method when declaring the object :
+ * <p/>
+ * public class ConcreteParser implements Parser<MyObject> { ... }
+ * <p/>
+ * Parser<MyObject> parser = new ConcreteParse();
  *
  * @param <E> A template that must be redifined by the implementations of the
  *            Parser interface.
+ * @author Fran�ois Caron <francois.caron.7@ens.etsmtl.ca>
  */
 public interface Parser<E> {
 
-	/**
-	 * The parse method is designed to scan an input file and produce an output
-	 * object defined by the <E> templace. The method should return null if the
-	 * file cannot be read, or if the file structure is different than what is
-	 * awaited.
-	 * 
-	 * @param filename The complete path to the file to parse.
-	 * @return An object produced from the input file, or null if something
-	 * 		   went wrong.
-	 */
-	E parse(String filename);
+    /**
+     * The parse method is designed to scan an input file and produce an output
+     * object defined by the <E> templace. The method should return null if the
+     * file cannot be read, or if the file structure is different than what is
+     * awaited.
+     *
+     * @param filename The complete path to the file to parse.
+     * @return An object produced from the input file, or null if something
+     * went wrong.
+     */
+    E parse(String filename);
 }
