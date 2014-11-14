@@ -3,7 +3,7 @@ package parser;
 /**
  * Created by michael on 14-11-11.
  */
-public class Chemin {
+public class Chemin implements Comparable<Chemin>{
 
 
     int pointSource;
@@ -28,5 +28,20 @@ public class Chemin {
 
     public int getPoids() {
         return poids;
+    }
+
+    @Override
+    public int compareTo(Chemin chemin) {
+        final int SMALLER = -1;
+        final int EQUAL = 0;
+        final int BIGGER = 1;
+        if (this.getPoids() < chemin.getPointSource()){
+
+            return SMALLER;
+        } else if(this.getPoids() > chemin.getPoids() ){
+            return BIGGER;
+        }
+
+        return EQUAL;
     }
 }
